@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--mac 上传文件只需要, 1、ftp home.ustc.edu.cn 2、put /Users/zhangle09/Desktop/index.html /public_html/index.html-->
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta name="keywords" content="Le Zhang, Data Mining, Machine Learning, Business Intelligence" /> 
+  <meta name="”viewport”" content="”width=device-width," initial-scale="1″" /> 
+  <title>Le Zhang's Homepage</title> 
+  <link rel="stylesheet" type="text/css" href="css/style.css" /> 
+ </head> 
+ <body> 
+  <div style="display: none;" id="goTopBtn"> 
+   <img src="top.png" width="40px;" /> 
+  </div> 
+  <!-- <script type="text/javascript">
+
+
+
+			window.onscroll = function() {
+
+
+
+				var t = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+
+				var div_up = document.getElementById("uptop");
+
+
+
+				t > 300 ? div_up.style.display = "block": div_up.style.display = "none";
+
+
+
+			}
+
+
+
+
+
+
+
+			function scroTop() {
+
+
+
+				document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+
+
+			}
+
+
+
+		</script> --> 
+  <nav class="clearfix"> 
+   <div class="topNavBar" id="header1" style="display: block;"> 
+    <ul class="clearfix_ul" style="color: #222; font-size: 16px;"> 
+     <li> <a class="ml" id="m_home" href="#home">Home</a> </li> 
+     <li> <a class="ml" id="m_biography" href="#biography">Biography</a> </li> 
+     <li> <a class="ml" id="m_publications" href="#publications">Publications</a> </li> 
+     <li> <a class="ml" id="m_honors" href="#honors">Honors</a> </li> 
+     <li> <a class="ml" id="m_internships" href="#internships">Internships</a> </li> 
+    </ul> 
+   </div> 
+   <div class="topNavBar" id="header2" style="display: none; margin: auto; width: 50%;"> 
+    <img src="zhangle.jpg" style="width: 30px; float: left; border-radius: 100px;" /> 
+    <ul class="clearfix_ul" style="line-height: 2; font-size: 16px;"> 
+     <li> <span style="color: #222;"><b>Le Zhang</b></span> </li> 
+     <li> <a class="ml" id="m_home_2" href="#home">Home</a> </li> 
+     <li> <a class="ml" id="m_biography_2" href="#biography">Biography</a> </li> 
+     <li> <a class="ml" id="m_publications_2" href="#publications">Publications</a> </li> 
+     <li> <a class="ml" id="m_honors_2" href="#honors">Honors</a> </li> 
+     <li> <a class="ml" id="m_internships_2" href="#internships">Internships</a> </li> 
+    </ul> 
+   </div> 
+  </nav> 
+  <script type="text/javascript">
+
+
+
+			function goTopEx() {
+
+
+
+				var obj = document.getElementById("goTopBtn");
+
+
+
+				var header1 = document.getElementById("header1");
+
+
+
+				var header2 = document.getElementById("header2");
+
+
+
+				function getScrollTop() {
+
+
+
+					return document.documentElement.scrollTop + document.body.scrollTop;
+
+
+
+				}
+
+
+
+				function setScrollTop(value) {
+
+
+
+					if (document.documentElement.scrollTop) {
+
+
+
+						document.documentElement.scrollTop = value;
+
+
+
+					} else {
+
+
+
+						document.body.scrollTop = value;
+
+
+
+					}
+
+
+
+				}
+
+
+
+				window.onscroll = function() {
+
+
+
+					getScrollTop() > 100 ? obj.style.display = "": obj.style.display = "none";
+
+
+
+					getScrollTop() > 230 ? header1.style.display = "none": header1.style.display = "";
+
+
+
+					getScrollTop() > 230 ? header2.style.display = "": header2.style.display = "none";
+
+
+
+					// if (getScrollTop() < 230) { location.hash="home"; }
+
+
+
+					// else if (getScrollTop() >= 230 && getScrollTop() < 400) { location.hash="biography"; }
+
+
+
+					// else if (getScrollTop() >= 412 && getScrollTop() < 460) { location.hash="publications"; }
+
+
+
+					// else if (getScrollTop() >= 460 && getScrollTop() < 815.2000122070312) { location.hash="honors"; }
+
+
+
+					// GetMenuID();
+
+
+
+					// GetMenuID2();
+
+
+
+				}
+
+
+
+				obj.onclick = function() {
+
+
+
+					var goTop = setInterval(scrollMove, 1);
+
+
+
+					function scrollMove() {
+
+
+
+						setScrollTop(getScrollTop() / 1.1);
+
+
+
+						if (getScrollTop() < 1) clearInterval(goTop);
+
+
+
+					}
+
+
+
+					document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+
+
+				}
+
+
+
+			}
+
+
+
+		</script> 
+  <script type="text/javascript">goTopEx();</script> 
+  <script type="text/javascript">
+
+
+
+			function GetMenuID() {
+
+
+
+				var menuList = ["m_home", "m_biography", "m_publications", "m_honors", "m_internships"];
+
+
+
+				for (m in menuList) {
+
+
+
+					var menuID = menuList[m];
+
+
+
+					var obj = document.getElementById(menuID);
+
+
+
+					obj.style.cssText = "color:#222; border-bottom: none;";
+
+
+
+				}
+
+
+
+				if (window.location.hash) {
+
+
+
+					var menuID = "m_" + window.location.hash.split("#")[1];
+
+
+
+					var obj = document.getElementById(menuID);
+
+
+
+					obj.style.cssText = "color:#337ab7; border-bottom: #337ab7 solid 2px;";
+
+
+
+				} else {
+
+
+
+					var menuID = "m_home";
+
+
+
+					var obj = document.getElementById(menuID);
+
+
+
+					obj.style.cssText = "color:#337ab7; border-bottom: #337ab7 solid 2px;";
+
+
+
+				}
+
+
+
+				// alert(document.documentElement.scrollTop + document.body.scrollTop)
+
+
+
+			}
+
+
+
+			// GetMenuID();
+
+
+
+			function GetMenuID2() {
+
+
+
+				var menuList = ["m_home_2", "m_biography_2", "m_publications_2", "m_honors_2", "m_internships_2"];
+
+
+
+				for (m in menuList) {
+
+
+
+					var menuID = menuList[m];
+
+
+
+					var obj = document.getElementById(menuID);
+
+
+
+					obj.style.cssText = "color:#222; border-bottom: none;";
+
+
+
+				}
+
+
+
+				if (window.location.hash) {
+
+
+
+					var menuID = "m_" + window.location.hash.split("#")[1] + "_2";
+
+
+
+					var obj = document.getElementById(menuID);
+
+
+
+					obj.style.cssText = "color:#337ab7; border-bottom: #337ab7 solid 2px;";
+
+
+
+				} else {
+
+
+
+					var menuID = "m_home_2";
+
+
+
+					var obj = document.getElementById(menuID);
+
+
+
+					obj.style.cssText = "color:#337ab7; border-bottom: #337ab7 solid 2px;";
+
+
+
+				}
+
+
+
+				GetMenuID();
+
+
+
+				// alert(document.documentElement.scrollTop + document.body.scrollTop)
+
+
+
+			}
+
+
+
+			GetMenuID2();
+
+
+
+			// window.addEventListener('hashchange', GetMenuID(),false);
+
+
+
+			window.onhashchange = GetMenuID2;
+
+
+
+		</script> 
+  <div class="container" id="home"> 
+   <div class="row" style="width: 80%; margin: auto;"> 
+    <div class="col-md-1" style="float: left; margin-right: 20px;"> 
+     <img src="zhangle.jpg" class="zhangle" style="width: 130px; border-radius: 3px; margin-top: 20px;" /> 
+    </div> 
+    <div class="col-md-2" style="margin-top: 0px;"> 
+     <br /> 
+     <span style="font-size: 30px; color: #000;">Le Zhang&nbsp;&nbsp; <b style="font-family:KaiTi">张乐</b></span> 
+     <br /> 
+     <br /> 
+     <span style="font-size: 15pt;">Researcher</span> 
+     <br /> 
+     <!-- <a href="https://bigdata.ustc.edu.cn/" target="_blank">Anhui Province Key Laboratory of Big Data Analysis and Application</a>
+
+
+
+					<br />
+
+
+
+					<a href="https://cs.ustc.edu.cn/" target="_blank">Department of Computer Science and Engineering</a>
+
+
+
+					<br />
+
+
+
+					<a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a> --> 
+     <a href="http://research.baidu.com/" target="_blank">Baidu Research, Baidu Inc</a> 
+     <br /> 
+     <br /> 
+     <div style="font-size:10.5pt;" id="biography"> 
+      <b>Email:</b> &nbsp;
+      <a href="mailto:zhangle0202@gmail.com">zhangle0202@gmail.com</a>;&nbsp;&nbsp;
+      <a href="mailto:laughing@mail.ustc.edu.cn">laughing@mail.ustc.edu.cn</a>.
+      <br /> 
+      <b>Office:</b> &nbsp; Baidu Campus, No. 10 Shangdi 10th Street, Haidian District, Beijing, China. 
+     </div> 
+    </div> 
+   </div> 
+   <hr style="margin-top: 35px; margin-bottom: 30px; border: 0; border-top: 1px solid #e7e7e7;" /> 
+   <div id="" class="title">
+    Biography
+   </div> 
+   <hr style="margin-top: 20px; border: 0; background: #222;border-top: 1.3px solid #222;" /> 
+   <hr /> 
+   <div class="row"> 
+    <div class="content" id="publications"> 
+     <!-- <p> Le Zhang received his B.E. degree in  <a href="http://ssdut.dlut.edu.cn/" target="_blank">Software Engineering</a> from <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a> in 2016. He is currently working toward his PhD degree in the <a href="http://bigdata.ustc.edu.cn/" target="_blank">Anhui Province Key Laboratory of Big Data Analysis and Application</a>, <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a>, Hefei, China. His research interests include <b>network embedding</b> and its application in <b>business intelligence</b>. </p> --> 
+     <p>Le Zhang is currently a researcher at <a href="http://research.baidu.com/" target="_blank">Baidu Research, Baidu Inc</a>. He received his B.E. degree in Software Engineering from <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a> in 2016. And he received his Ph.D. degree in Computer Science from <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a> in 2022. His research interests include graph representation learning and its application in business intelligence.</p> 
+    </div> 
+   </div> 
+   <!-- <hr /> --> 
+   <div id="title" class="title" style="margin-top: 30px; margin-bottom: 20px;">
+    Publications
+    <span style="font-size: 15px; color: #666;">&nbsp;&nbsp;(Selected)</span>
+   </div> 
+   <hr /> 
+   <div class="row"> 
+    <div class="paper_list"> 
+     <ol style="list-style-type: decimal;"> 
+      <li>Zhuoning Guo, Hao Liu, <b>Le Zhang</b>, Qi Zhang, Hengshu Zhu, Hui Xiong, <b>Talent Demand-Supply Joint Prediction with Dynamic Heterogeneous Graph Enhanced Meta-Learning</b> <i>In Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</i>, <b>(KDD'22)</b>, Washington DC, Accepted. <br /><br /> </li> 
+      <li>Zihao Zhou, <b>Le Zhang</b>, Rui Zha, Qiming Hao, Tong Xu, Di Wu, Enhong Chen, <b>Multi-Relational Graph Convolution Network for Stock Movement Prediction</b>, <i>In Proceedings of the 2022 IEEE World Congress on Computational Intelligence</i>, <b>(IJCNN'22)</b>, Padova, Italy, 2022, Accepted. <br /><br /> </li> 
+      <li>Huijie Liu, Han Wu, <b>Le Zhang</b>, Runlong Yu, Ye Liu, Chunli Liu, Minglei Li, Qi Liu, Enhong Chen, <b>A Hierarchical Interactive Multi-Channel Graph Neural Network for Technological Knowledge Flow Forecasting</b>, <i>In Knowledge and Information Systems</i>, <b>(KAIS'22)</b>, Accepted. <br /><br /> </li> 
+      <li>Zhe Zhang, Tong Xu, Chuan Qin, <b>Le Zhang</b>, Enhong Chen, Hui Xiong, <b>Complex Attributed Network Embedding for Medical Complication Prediction</b>, <i>In Knowledge and Information Systems</i>, <b>(KAIS'22)</b>, Accepted. <br /><br /> </li> 
+      <li>Huijie Liu, Han Wu, <b>Le Zhang</b>, Runlong Yu, Ye Liu, Qi Liu, Enhong Chen, <b>Technological Knowledge Flow Forecasting through A Hierarchical Interactive Graph Neural Network</b>, <i>In Proceedings of IEEE International Conference on Data Mining 2021</i>, <b>(ICDM'21)</b>, Online, 2021, Accepted. <br /><br /> </li> 
+      <li><b>Le Zhang</b>, Ding Zhou, Hengshu Zhu, Tong Xu, Rui Zha, Enhong Chen, Hui Xiong, <b>Attentive Heterogeneous Graph Embedding for Job Mobility Prediction</b>, <i>In Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</i> <b>(KDD'21)</b>, Singapore, 2021, Accepted. <a href="http://home.ustc.edu.cn/~laughing/papers/zhangle_KDD2021.pdf">[PDF]</a> <br /><br /> </li> 
+      <li>Zhe Zhang, Tong Xu, <b>Le Zhang</b>, Yichao Du, Hui Xiong, Enhong Chen, <b>Knowledge Powered Cooperative Semantic Fusion for Patent Classification</b>, <i>In Proceedings of CAAI International Conference on Artificial Intelligence 2021</i> <b>(CICAI’21)</b>, Hangzhou, China, 2021, Accepted. <a href="http://home.ustc.edu.cn/~laughing/papers/zhangzhe-CICAI2021.pdf">[PDF]</a> <font color="red"><b> (Best Student Paper Finalist)</b></font><br /><br /> </li> 
+      <li>Lintao Fang, <b>Le Zhang</b>, Han Wu, Tong Xu, Ding Zhou, Enhong Chen, <b>Patent2Vec: Multi-view Representation Learning on Patent-Graphs for Patent Classification</b>, <i>In World Wide Web</i> <b>(WWWJ'21)</b>, Accepted.<br /><br /> </li> 
+      <li>Chao Ren, <b>Le Zhang</b>, Lintao Fang, Tong Xu, Zhefeng Wang, Senchao Yuan, Enhong Chen, <b> Ontological Concept Structure Aware Knowledge Transfer for Inductive Knowledge Graph Embedding</b>, <i>In Proceedings of the 2021 International Joint Conference on Neural Networks</i> <b>(IJCNN'21)</b>, Shenzhen, China, 2021, Accepted. <br /><br /> </li> 
+      <li>Qiming Hao, <b>Le Zhang</b>, Rui Zha, Ding Zhou, Zhe Zhang, Tong Xu, Enhong Chen, <b>Urban Crowd Density Prediction Based on Multi-relational Graph</b>, <i>In Proceedings of the 22nd IEEE International Conference on Mobile Data Management</i> <b>(MDM'21)</b>, Online, 2021, Accepted. <a href="http://home.ustc.edu.cn/~laughing/papers/haoqiming-MDM2021.pdf">[PDF]</a> <br /><br /> </li> 
+      <li>Linkang Hu, Weidong He, <b>Le Zhang</b>, Tong Xu, Hui Xiong, Enhong Chen, <b>Detecting Highlighted Video Clips via Emotion-enhanced Audio-Visual Cues</b>, <i> In Proceedings of&nbsp;IEEE International Conference on Multimedia and Expo 2021</i> <b>(ICME'21)</b>, Shenzhen, China, 2021, Accepted. <a href="http://home.ustc.edu.cn/~laughing/papers/hulinkang-ICME2021.pdf">[PDF]</a> <br /><br /> </li> 
+      <li>Ding Zhou, Hao Liu, Tong Xu, <b>Le Zhang</b>, Rui Zha, Hui Xiong, <b>Transportation Recommendation with Fairness Consideration</b>, <i>In Proceedings of the 26th International Conference on Database Systems for Advanced Applications</i> <b>(DASFAA'21)</b>, Taipei, China, 2021, 566-578. <a href="http://home.ustc.edu.cn/~laughing/papers/zhouding-dasffa2021.pdf">[PDF]</a> <br /><br /></li> 
+      <li>Binglei Wang, Tong Xu, Hao Wang, Yanmin Chen, <b>Le Zhang</b>, Lintao Fang, Guiquan Liu, Enhong Chen, <b>Author Contributed Representation for Scholarly Network</b>, <i>In Proceedings of the 4th APWeb-WAIM International Joint Conference on Web and Big Data</i> <b>(APWeb-WAIM'20)</b>, Tianjin, China, 2020, 558-573. <a href="http://home.ustc.edu.cn/~laughing/papers/wangbinglei-APWEB2020.pdf">[PDF]</a> <br /><br /> </li> 
+      <li>秦川, 祝恒书, 庄福振, 郭庆宇, 张琦, <b>张乐</b>, 王超, 陈恩红, 熊辉, <b>基于知识图谱的推荐系统研究综述,</b> <b>《中国科学: 信息科学》</b>, 2020. <a href="http://home.ustc.edu.cn/~laughing/papers/qinchuan_SCIS_2020.pdf">[PDF]</a> <br /><br /></li> 
+      <li><b>Le Zhang</b>, Tong Xu, Hengshu Zhu, Chuan Qin, Qingxin Meng, Hui Xiong, Enhong Chen, <b>Large-Scale Talent Flow Embedding for Company Competitive Analysis</b>, <i>In Proceedings of The Web Conference 2020</i> <b>(WWW'20)</b>, Taipei, China, 2020, 2354-2364. <a href="http://home.ustc.edu.cn/~laughing/papers/zhangle_WWW2020.pdf">[PDF]</a> <br /><br /> </li> 
+      <li>Qingxin Meng, Hengshu Zhu, Keli Xiao, <b>Le Zhang</b>, Hui Xiong, <b>A Hierarchical Career-Path-Aware Neural Network for Job Mobility Prediction</b>, <i>In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</i> <b>(KDD'19)</b> , Anchorage, Alaska, 2019, 14-24. <a href="http://home.ustc.edu.cn/~laughing/papers/mengqingxin_KDD2019.pdf">[PDF]</a> <br /><br /> </li> 
+      <li>Xunxian Wu, Tong Xu, Hengshu Zhu, <b>Le Zhang</b>, Hui Xiong, Enhong Chen, <b>Trend-Aware Tensor Factorization for Job Skill Demand Analysis</b>, <i>In Proceedings of the 28th International Joint Conference on Artificial Intelligence</i> <b>(IJCAI'19)</b>, Macau, China, 2019, 3891-3897. <a href="http://home.ustc.edu.cn/~laughing/papers/wuxunxian-IJCAI2019.pdf">[PDF]</a> <br /><br /> </li> 
+      <li><b>Le Zhang</b>, Chen Zhu, Hengshu Zhu, Tong Xu, Enhong Chen, Chuan Qin, Hui Xiong, <b>Large-Scale Talent Flow Forecast with Dynamic Latent Factor Model</b>, <i>In Proceedings of The Web Conference 2019</i> <b>(WWW'19)</b>, San Francisco, CA, USA, 2019, 2312-2322. <a href="http://home.ustc.edu.cn/~laughing/papers/zhangle_WWW2019.pdf">[PDF]</a> <br /><br /> </li> 
+      <li>吴法民, 吕广奕, 刘淇, 何明, 常标, 何伟栋, 钟辉, <b>张乐</b>. <b>视频实时评论的深度语义表征方法[J],</b> <b> 计算机研究与发展, </b>2019, 56(2): 293-305. 
+       <!-- <a href="http://home.ustc.edu.cn/~laughing/papers/wufamin_jiyanfa2017.pdf">[PDF]</a> --> <br /><br /></li> 
+      <li><b>Le Zhang</b>, Tianyuan Jin, Tong Xu, Biao Chang, Zhefeng Wang and Enhong Chen, <b>A Markov Chain Monte Carlo Approach for Source Detection in Networks</b>, <i> In Proceedings of Sixth National Conference on Social Media Processing</i> <b>(SMP'17)</b>, Beijing, China, 2017, 77-88. <a href="http://home.ustc.edu.cn/~laughing/papers/zhangle_SMP2017.pdf">[PDF]</a> <br /><br /></li> 
+     </ol> 
+    </div> 
+   </div> 
+   <div id="honors" class="title" style="margin-top: 20px; margin-bottom: 20px;">
+    Honors
+   </div> 
+   <hr /> 
+   <div class="row"> 
+    <div class="hornor_list"> 
+     <ul style="list-style-type: disc;"> 
+      <li> <b>USTC :</b> 
+       <ul> 
+        <li>2022, 安徽省优秀毕业生</li> 
+        <li>2021, 国家奖学金</li> 
+        <li>2020, 国睿奖学金</li> 
+        <li>2019, 环球数码奖学金</li> 
+        <li>2017, 环球数码奖学金</li> 
+        <li>2016~2021, 学业奖学金一等</li> 
+       </ul> </li> 
+      <li> <b>DLUT :</b> 
+       <ul> 
+        <li>2016, 大连市优秀毕业生、大连市三好学生</li> 
+        <li>2015, 大连理工大学凌水奖学金</li> 
+        <li>2013, 辽宁省第五届大学生高等数学竞赛二等奖</li> 
+        <li>2013, 大连市第22届大学生高等数学竞赛一等奖</li> 
+       </ul> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="internships" class="title" style="margin-top: 20px; margin-bottom: 20px;">
+    Internships
+   </div> 
+   <hr /> 
+   <div class="row"> 
+    <div class="internship_list"> 
+     <ul style="list-style-type: disc;"> 
+      <ul> 
+       <li><b>Development intern</b>, Iflytek, Hefei, China, Sep. 2016 ~ May. 2017 <br /><br /></li> 
+       <li><b>Research Intern</b>, Baidu Inc., Beijing, China, Aug. 2017 ~ Nov. 2018 <br /><br /></li> 
+      </ul> 
+     </ul> 
+    </div> 
+   </div> 
+  </div>   
+ </body>
+</html>
